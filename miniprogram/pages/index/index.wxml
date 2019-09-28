@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="page">
+    <map id='myMap' class='map' style='height:{{windowHeight}}px' longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" enable-rotate='true' enable-3D='true' show-location='true'>
+    <cover-image class="music-btn {{isPlay ? 'running' : ''}}" src="music.png" bindtap="hitMusicBtn"></cover-image>
+    <cover-view class="btn">      
+      <button bindtap="getLocation">
+        <cover-view class='inner'>
+          <cover-view class='inner-text'>我为祖国献红旗</cover-view>
+          <cover-image src='buttonflag.png'></cover-image>
+        </cover-view>
+      </button>
+    </cover-view>
+    </map>
+    <popup id='popup' 
+      title='' 
+      content='是否要分享到朋友圈' 
+      btn_no='取消' 
+      btn_ok='分享'
+      bind:error="_error"  
+      bind:success="_success">
+    </popup>
+</view>

@@ -1,0 +1,74 @@
+/**index.wxss**/
+
+.page {
+  height: 100%;
+  width: 100%;
+  
+  
+}
+
+.map {
+  width: 100%;
+}
+
+/* 右上角转动音乐图标 */
+.music-btn {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 8%;
+  right: 10%;
+}
+
+.running{
+  /* 动画效果 */
+  animation: rotate 8s linear infinite;
+  -webkit-animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.btn {
+  position: fixed;
+  bottom: 7%;
+  left: 33%;
+}
+
+.btn button {
+  padding: 8rpx 20rpx 8rpx 20rpx;
+}
+
+.btn::after{
+  border: none
+}
+
+.btn button::after{
+  border: none
+}
+
+.btn button{
+  background-color: rgba(255, 250, 205, 0.3);
+  
+}
+
+.btn button .inner{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.inner cover-image{
+  width: 50rpx;
+  height: 50rpx;
+
+}
