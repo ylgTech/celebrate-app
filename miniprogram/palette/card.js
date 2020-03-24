@@ -1,5 +1,5 @@
 export default class LastMayday {
-  palette(userinfo) {
+  palette(userinfo,province) {
     
     return ({
       width: '670rpx',
@@ -19,7 +19,7 @@ export default class LastMayday {
         {
           id: 'my-text-id',
           type: 'text',
-          text: "    我在这里",
+          text: "    我在"+province,
           css: [{
             top: `${startTop + 7.0 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
@@ -29,7 +29,7 @@ export default class LastMayday {
         {
           id: 'my-text-id',
           type: 'text',
-          text: "    为祖国献旗",
+          text: "    为祖国点亮红旗",
           css: [{
             top: `${startTop + 8.5 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
@@ -38,6 +38,7 @@ export default class LastMayday {
         },
        
         _image(3, 0, '100rpx'),
+        _csuImg(3, 0, '100rpx'),
         _userImg(3, 0, '100rpx', userinfo.avatarUrl),
       ],
     });
@@ -61,10 +62,30 @@ function _image(index, rotate, borderRadius) {
   return (
     {
       type: 'image',
-      url: '../../palette/fake.jpg',
+      url: '../../palette/QRpic.jpg',
       css: {
         top: `${startTop + 15 * gapSize}rpx`,
         left: `${startLeft + 158 * index}rpx`,
+        width: '130rpx',
+        height: '130rpx',
+        // shadow: '10rpx 10rpx 5rpx #888888',
+        rotate: rotate,
+        borderWidth: '2rpx',
+        borderColor: '#fff',
+        borderRadius: borderRadius,
+      },
+    }
+  );
+}
+
+function _csuImg(index, rotate, borderRadius) {
+  return (
+    {
+      type: 'image',
+      url: '../../palette/csu.png',
+      css: {
+        top: `${startTop + 15 * gapSize}rpx`,
+        left: `${startLeft + 0.1 * index}rpx`,
         width: '130rpx',
         height: '130rpx',
         // shadow: '10rpx 10rpx 5rpx #888888',

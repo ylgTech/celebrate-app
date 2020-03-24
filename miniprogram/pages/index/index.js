@@ -42,6 +42,7 @@ Page({
     scale: 3,
     // 标点信息
     markers: [],
+    userInfo: null,
     openid: app.globalData.openid,
     province: null,
     avatarUrl: app.globalData.avatarUrl,
@@ -49,12 +50,47 @@ Page({
     popup: null,
     // 标记音乐是否播放
     isPlay: false,
+    // 按钮是否禁用 防止多次点击
+    disabled: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    hasUserInfo: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
+    var _this = this;
+    //判断是否已经有用户授权登录
+    if (app.globalData.userInfo) {
+      console.log("yes");
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true,
+      })
+      console.log(this.data.userInfo);
+    } else if (_this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        _this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true,
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          _this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true,
+          })
+        }
+      })
+    }
+
     this.getAvatarUrl()
     this.onGetOpenid()
     this.loadMusic()
@@ -112,6 +148,15 @@ Page({
         }
       }
     })
+  },
+
+  /**
+   * 点击button获取用户信息
+   */
+  onGotUserInfo: function (e) {
+    app.globalData.userInfo = e.detail.userInfo
+    app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+    that.data.avatarUrl = e.detail.userInfo.avatarUrl
   },
 
   /**
@@ -232,6 +277,14 @@ Page({
   */
   getLocation: function () {
     var that = this
+    this.setData({
+      disabled: true
+    })
+    setTimeout(function () {
+      that.setData({
+        disabled: false
+      })
+    }.bind(this), 3000);
     wx.getLocation({
       type: 'wgs84',   //默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 
       success: function (res) {
@@ -252,6 +305,8 @@ Page({
    * 为祖国献旗
    */
   addFlag: function (longitude, latitude, province, provinces) {
+    var that = this
+    console.log(app.globalData.userInfo)
     const db = wx.cloud.database()
     for (var j = 0; j < provinces.length; j++) {
       // console.log(province,provinces[j].proName)
@@ -262,10 +317,39 @@ Page({
           wx.showToast({
             title: '您已经在该省份献过旗了（//▽//）现在已有'+res.total+'面旗帜了哦',
             duration: 3000,
-            icon: 'none'
+            icon: 'none',
+            mask: true
           });
           setTimeout(function () {
-            this.showPopup()
+            // this.showPopup()
+            wx.showModal({
+              content: '是否要生成分享图片',
+              confirmText: '是',
+              cancelText: '否',
+              success: function (res) {
+                if (res.confirm) {
+                  wx.getUserInfo({
+                    success: function (res) {
+                      // console.log(res)
+                      app.globalData.userInfo = res.userInfo
+                      app.globalData.avatarUrl = res.userInfo.avatarUrl
+                      that.data.avatarUrl = res.userInfo.avatarUrl
+                    },
+                    fail: function () {
+                      wx.showToast({
+                        title: '无法获取信息来制作分享卡片',
+                        duration: 3000,
+                        icon: 'none'
+                      })
+                      return
+                    }
+                  })
+                  wx.navigateTo({
+                    url: '../share/share',
+                  })
+                }
+              }
+            })
             }.bind(this), 3000);
           }
         })
@@ -294,6 +378,7 @@ Page({
       success: function (res) {
         // console.log(res);       
         province = res.data.result.addressComponent.province
+        app.globalData.province = res.data.result.addressComponent.province
         _this.getFlagProvince(longitude, latitude, province)
         // _this.addFlag(longitude, latitude, province)
       },
@@ -345,7 +430,7 @@ Page({
    * 
    */
   insert: function (lon, lat, pro){
-    
+    var that = this
     const db = wx.cloud.database()
     db.collection('user').add({
       data: {
@@ -358,16 +443,43 @@ Page({
         this.querySum()
         
         // 在地图上渲染国旗
-        var info = new markerItem(2, lon, lat, 'smallButFlag.png')
+        var info = new markerItem(2, lon, lat, 'smallButFlag.png', true)
        
         this.data.markers.push(info)
         
         this.setData({
           markers: this.data.markers
         })
-
         setTimeout(function () {
-          this.showPopup()
+          // this.showPopup()
+          wx.showModal({
+            content: '是否要生成分享图片',
+            confirmText: '是',
+            cancelText: '否',
+            success: function (res) {
+              if (res.confirm) {
+                wx.getUserInfo({
+                  success: function (res) {
+                    // console.log(res)
+                    app.globalData.userInfo = res.userInfo
+                    app.globalData.avatarUrl = res.userInfo.avatarUrl
+                    that.data.avatarUrl = res.userInfo.avatarUrl
+                  },
+                  fail: function () {
+                    wx.showToast({
+                      title: '无法获取信息来制作分享卡片',
+                      duration: 3000,
+                      icon: 'none'
+                    })
+                    return
+                  }
+                })
+                wx.navigateTo({
+                  url: '../share/share',
+                })
+              }
+            }
+          })
         }.bind(this), 3000);
     
       },
@@ -431,6 +543,15 @@ Page({
         })
       }
     })
+  },
+
+  getUserInfo: function (e) {
+    app.globalData.userInfo = e.detail.userInfo;
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    });
+    console.log(e.detail.userInfo.avatarUrl);
   },
 
   /**

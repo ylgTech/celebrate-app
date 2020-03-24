@@ -1,12 +1,35 @@
-# 云开发 quickstart
+# CSU献旗小程序
 
-这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
+初始功能为国庆节提供给同学们为祖国献旗，后承担母校合并组件20周年活动。
 
-- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
-- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
-- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
+##代码结构
 
-## 参考文档
+>cloudfunctions ：
+>云开发文件
+>>getRecord:获取记录
+>>login:云开发登录
 
-- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+>miniprogram: 
+>小程序主要文件
+>>colorui:colorui组件库 https://github.com/weilanwl/ColorUI
+
+>>component:组件
+>>>painter:绘制组件
+>>>popup:弹出组件
+
+>>pages:主要页面
+>>>index:主地图界面
+>>>share:分享海报界面
+
+>>palette:分享界面数据
+
+>>style:一些css样式
+
+>app.js 
+
+>app.wxss 
+
+>app.json 
+
+>project_config.json:其它配置参数 
 

@@ -4,11 +4,10 @@
     "pages/share/share"
   ],
   "window": {
-    "backgroundColor": "#FF0000",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#EE2C2C",
-    "navigationBarTitleText": "我为祖国庆生献旗",
-    "navigationBarTextStyle": "white"
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
   },
   "permission": {
     "scope.userLocation": {

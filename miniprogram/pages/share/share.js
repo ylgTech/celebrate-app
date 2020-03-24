@@ -12,6 +12,7 @@ Page({
     test: "test",
     template: {},
     userInfo: {},
+    province: null
   },
 
   onImgOK(e) {
@@ -23,26 +24,23 @@ Page({
     console.log("我点了保存"),
       wx.saveImageToPhotosAlbum({
         filePath: this.imagePath,
+        success: function () {
+          wx.showToast({
+            title: "图片已保存到系统相册，快到朋友圈分享吧~",
+            icon: "none",
+            duration: 3000,
+            mask: false,
+          })
+        },
+      fail: function () {
+        wx.showToast({
+          title: "呀图片丢失了。图片保存失败",
+          icon: "none",
+          duration: 3000,
+          mask: false,
+        })
+        }
       });
-    wx.showToast({
-      title: "图片已保存到系统相册，快到朋友圈分享吧~",
-      /** 系统默认的icon样式
-       * 
-       * "success" -> 成功        此时 title 文本最多显示 7 个汉字长度
-       * "loading" -> 加载中      此时 title 文本最多显示 7 个汉字长度
-       * "none"    -> 纯文字展示   此时 title 文本最多可显示两行
-      */
-      icon: "none",
-
-      /** 提示的延迟时间
-       * 单位毫秒，默认：1500
-      */
-      duration: 3000,
-      /** 是否显示透明蒙层
-       * 防止触摸穿透，默认：false
-      */
-      mask: false,
-    })
   },
 
   /**
@@ -50,8 +48,7 @@ Page({
    */
   onReady: function () {
     this.setData({
-      template: new Card().palette(app.globalData.userInfo),
-    });
-    
-  }
+      template: new Card().palette(app.globalData.userInfo, app.globalData.province),
+    });   
+  },
 });

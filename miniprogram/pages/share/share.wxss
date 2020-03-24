@@ -9,3 +9,13 @@
   flex-direction: column;
   justify-content: center;
 }/* miniprogram/pages/share/share.wxss */
+
+.shareimg{
+  margin-top: 5%;
+}
+
+.store button{
+  background-color: rgba(255, 250, 205, 0.3);
+  font-size: 30rpx;
+  border-radius: 10%;
+}

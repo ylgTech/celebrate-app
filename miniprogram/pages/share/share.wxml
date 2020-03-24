@@ -1,4 +1,13 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">为母校组建20周年助力</view>
+</cu-custom>
 <view>
-  <painter customStyle='margin-left:40rpx' palette="{{template}}" bind:imgOK="onImgOK" />
-  <button style='position:relative;margin-top:50rpx' bind:tap='saveImage'>保存</button>
+  <view class='shareimg'>
+    <painter customStyle='margin-left:40rpx' palette="{{template}}" bind:imgOK="onImgOK" />
+  </view>
+  <view class='store'>
+    <button style='position:relative;margin-top:50rpx' bind:tap='saveImage'>保存到手机相册</button>
+  </view>
+  
 </view>

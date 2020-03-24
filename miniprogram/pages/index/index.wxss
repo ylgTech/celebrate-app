@@ -40,7 +40,22 @@
 .btn {
   position: fixed;
   bottom: 7%;
-  left: 33%;
+  left: 30%;
+  
+}
+
+.authorise{
+  position: fixed;
+  bottom: 0;
+  left: 35%;
+  width: 30%;
+  height: 30%;
+  
+}
+
+.authorise button{
+  background-color: rgba(255, 250, 205, 0.3);
+  font-size: 30rpx;
 }
 
 .btn button {
@@ -57,7 +72,6 @@
 
 .btn button{
   background-color: rgba(255, 250, 205, 0.3);
-  
 }
 
 .btn button .inner{
