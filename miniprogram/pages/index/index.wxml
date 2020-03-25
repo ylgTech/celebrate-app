@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
-	<view slot="content">为母校组建20周年助力</view>
+	<view slot="content">母校组建20周年助力</view>
 </cu-custom>
 
 <view class="page">
