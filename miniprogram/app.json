@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/share/share"
+    "pages/share/share",
+    "pages/madeph/madeph",
+    "pages/select/select",
+    "pages/upload/upload"
   ],
   "window": {
     "navigationStyle": "custom"

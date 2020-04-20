@@ -41,7 +41,10 @@
   position: fixed;
   bottom: 7%;
   left: 30%;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .authorise{
@@ -85,4 +88,7 @@
   width: 50rpx;
   height: 50rpx;
 
+}
+.cu-btn bg-red{
+  color: black
 }

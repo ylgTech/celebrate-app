@@ -6,9 +6,21 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
-	"appid": "wx14a51c96a9ddd887",
+	"appid": "wx833f30b66b925b5c",
 	"projectname": "guoqingtest",
 	"libVersion": "2.8.3",
 	"simulatorType": "wechat",

@@ -1,29 +1,27 @@
 <!--index.wxml-->
 <cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
-	<view slot="content">母校组建20周年助力</view>
+  <view slot="content">母校组建20周年助力</view>
 </cu-custom>
-
 <view class="page">
-    <map id='myMap' class='map' style='height:{{windowHeight}}px' longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" enable-rotate='true' enable-3D='true' show-location='true'>
+  <map id='myMap' class='map' style='height:{{windowHeight}}px' longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" enable-rotate='true' enable-3D='true' show-location='true'>
     <cover-image class="music-btn {{isPlay ? 'running' : ''}}" src="music.png" bindtap="hitMusicBtn"></cover-image>
     <cover-view class='authorise'>
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
     </cover-view>
-    <cover-view class="btn">      
+    <cover-view class="btn">
       <button wx:if="{{hasUserInfo && canIUse}}" bindtap="getLocation" disabled="{{disabled}}">
         <cover-view class='inner'>
           <cover-view class='inner-text'>我为母校助力</cover-view>
           <cover-image src='buttonflag.png'></cover-image>
         </cover-view>
       </button>
+      <button bindtap="headimag" style="margin-top:5px" wx:if="{{hasUserInfo && canIUse}}" >
+        <cover-view class='inner'>
+          <cover-view class='inner-text'>一起换头像吧！</cover-view>
+        </cover-view>
+      </button>
     </cover-view>
-    </map>
-    <popup id='popup' 
-      title='' 
-      content='是否要分享到朋友圈' 
-      btn_no='取消' 
-      btn_ok='分享'
-      bind:error="_error"  
-      bind:success="_success">
-    </popup>
+  </map>
+  <popup id='popup' title='' content='是否要分享到朋友圈' btn_no='取消' btn_ok='分享' bind:error="_error" bind:success="_success">
+  </popup>
 </view>

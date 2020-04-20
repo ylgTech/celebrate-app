@@ -1,14 +1,11 @@
 //app.js
 App({
+  onLaunch: function() {
+    // 展示本地存储能力
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
 
-  globalData: {
-    userInfo: null,
-    openid: null,
-    avatarUrl: null,
-    province: null
-  },
-
-  onLaunch: function () {
     wx.getSystemInfo({
       success: e => {
         this.globalData.StatusBar = e.statusBarHeight;
@@ -29,22 +26,22 @@ App({
 
     //获取用户登录信息(是否签到)
     wx.login({
-      success: function (res) {
+      success: function(res) {
         if (res.code) {
           //发起网络请求,由于是异步执行，需要加回调函数
           console.log(res.code)
-          wx.getUserInfo({            
-            success: function (res) {
+          wx.getUserInfo({
+            success: function(res) {
               console.log(res.data);
               _this.userInfo = res.userInfo
-              _this.avatarUrl= res.userInfo.avatarUrl             
-            
+              _this.avatarUrl = res.userInfo.avatarUrl
+
             },
-            fail: function () {
-             
+            fail: function() {
+
               console.log('fail')
             },
-            
+
           })
         } else {
           console.log('登录失败！' + res.errMsg)
@@ -62,7 +59,7 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               _this.globalData.userInfo = res.userInfo;
-              _this.globalData.avatarUrl = res.userInfo.avatarUrl;           
+              _this.globalData.avatarUrl = res.userInfo.avatarUrl;
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -71,8 +68,18 @@ App({
               }
             }
           })
-        } 
+        }
       }
     });
+  },
+  globalData: {
+    toubgsrc:null,
+    userInfo: null,
+    bgPic: null,
+    scale: 1,
+    rotate: 0,
+    hat_center_x: 0,
+    hat_center_x: 0,
+    currentHatId: 1
   }
 })

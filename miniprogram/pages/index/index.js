@@ -582,6 +582,11 @@ onShareAppMessage:function(res){
     this.setData({
       isPlay: !this.data.isPlay
     })
+  },
+  headimag(){
+    wx.navigateTo({
+      url: '../select/select',
+    })
   }
 
 })
