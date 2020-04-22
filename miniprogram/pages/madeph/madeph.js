@@ -42,11 +42,11 @@ Page({
     //var contex = ctx.getContext('2d');
     var avatarurl_width = 840; //这个是画布宽
     var avatarurl_heigth = 840; //这个是高
-    // var avatarurl_x = 50;
-    // var avatarurl_y = 50;
+    var avatarurl_x = 50;
+    var avatarurl_y = 50;
     // contex.arc(avatarurl_width / 2 + avatarurl_x, avatarurl_heigth / 2 + avatarurl_y, avatarurl_width / 2, 0, Math.PI * 2, false);//这个地方我画了个头像的圆
     // contex.clip();
-    contex.drawImage(self.data.src, 127, 120);
+    contex.drawImage(self.data.src, avatarurl_x-5, avatarurl_y-5, avatarurl_width-100, avatarurl_heigth-100);
     contex.restore();
     contex.save();
     contex.beginPath(); //开始绘制

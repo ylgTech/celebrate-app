@@ -2,12 +2,13 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">母校组建20周年助力</view>
 </cu-custom>
+<!--madeph.wxml-->
 <!--合成生产头像页-->
 <view class="container flex">
   <view>
     <canvas canvas-id="myCanvas" class='bg'>
+      <image src="{{src}}" class="avatar {{bgcss}}" style='width:10rem; height:10rem;'></image>
       <image src="{{bgsrc}}" style='width:10rem; height:10rem;'></image>
-      <image src="{{src}}" class="avatar {{bgcss}}"></image>
     </canvas>
     <!--这里的canvas有个BUG，懂的人都懂，如果解决望告知-->
     <view style='position:absolute;left:400rpx;'>

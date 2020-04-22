@@ -1,10 +1,18 @@
 // pages/select/select.js
 const app = getApp();
 var _tousList = [{
-  name: '精美头像框',
+  name: '类型1',
   coverImgUrl: '../../images/ah1.png'
-}
-]
+}, {
+  name: '类型2',
+  coverImgUrl: '../../images/ah2.png'
+}, {
+  name: '类型3',
+  coverImgUrl: '../../images/ah3.png'
+}, {
+  name: '类型4',
+  coverImgUrl: '../../images/ah4.png'
+}]
 
 Page({
 
@@ -18,12 +26,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   //点击选项进入详情页
-  detail: function (e) {
+  detail: function(e) {
     // console.log(e)
     var touNum = e.currentTarget.dataset.tounum
     // console.log(yangzhiNum)
@@ -65,7 +73,7 @@ Page({
         })
         break;
       default:
-      //do nothing
+        //do nothing
     }
   },
 
