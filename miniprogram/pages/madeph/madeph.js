@@ -46,7 +46,7 @@ Page({
     var avatarurl_y = 50;
     // contex.arc(avatarurl_width / 2 + avatarurl_x, avatarurl_heigth / 2 + avatarurl_y, avatarurl_width / 2, 0, Math.PI * 2, false);//这个地方我画了个头像的圆
     // contex.clip();
-    contex.drawImage(self.data.src, avatarurl_x-5, avatarurl_y-5, avatarurl_width-100, avatarurl_heigth-100);//调整图片位置大小
+    contex.drawImage(self.data.src, 0, 0, avatarurl_width, avatarurl_heigth);//调整图片位置大小
     contex.restore();
     contex.save();
     contex.beginPath(); //开始绘制
