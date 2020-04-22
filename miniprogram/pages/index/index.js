@@ -137,10 +137,10 @@ onShareAppMessage:function(res){
    * 加载背景音乐
    */
   loadMusic: function () {
-    backgroundAudioManager.title = '我和我的祖国'
-    backgroundAudioManager.singer = '王菲'
-    backgroundAudioManager.coverImgUrl = 'https://p1.music.126.net/HeGrAKPiZhKkONiFDxZvmw==/109951164384346866.jpg?param=130y130'
-    backgroundAudioManager.src = 'https://music.163.com/song/media/outer/url?id=1392990601.mp3'
+    backgroundAudioManager.title = '红色蒲公英'
+    backgroundAudioManager.singer = '影视原声'
+    backgroundAudioManager.coverImgUrl = 'https://7265-release-rr1dn-1301509296.tcb.qcloud.la/minzhu.jpg?sign=f942d736de05279e603c33d2869bdc3c&t=1583934978'
+    backgroundAudioManager.src = 'http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_662348&response=res&type=convert_url&'
   },
 
   /**
@@ -331,7 +331,7 @@ onShareAppMessage:function(res){
         db.collection('user').count({
           success: res => {
           wx.showToast({
-            title: '您已经在该省份献过旗了（//▽//）现在已有'+res.total+'面旗帜了哦',
+            title: '您已经在该省份助过力了（//▽//）现在已有'+res.total+'个标志了哦',
             duration: 3000,
             icon: 'none',
             mask: true
@@ -519,7 +519,7 @@ onShareAppMessage:function(res){
         wx.showToast({
           icon: 'none',
           duration: 3000,
-          title: '我为祖国献红旗，红心向党迎国庆。CSUer献给祖国的第' + res.total +'面旗（●>∀<●）'
+          title: '我为母校合并组建20周年助力。CSUer献给母校的第' + res.total +'个标志（●>∀<●）'
         })
 
       },

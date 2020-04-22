@@ -85,8 +85,8 @@
 }
 
 .inner cover-image{
-  width: 50rpx;
-  height: 50rpx;
+  width: 32rpx;
+  height: 48rpx;
 
 }
 .cu-btn bg-red{

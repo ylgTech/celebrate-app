@@ -1,19 +1,20 @@
 export default class LastMayday {
-  palette(userinfo,province) {
-    
+  palette(userinfo, province) {
+
     return ({
       width: '670rpx',
-      height: '1000rpx',
+      height: '1190rpx',
       background: '../../palette/sharebk.jpg',
-      views: [
-        {
+      views: [{
           id: 'my-text-id',
           type: 'text',
           text: "",
           css: [{
-            top: `${startTop + 5.5 * gapSize}rpx`,
+            top: `${startTop + 20 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
-            fontWeight: 'bold',
+            fontWeight: 'normal',
+            color:'white',
+            fontFamily: "仿宋",
           }, common],
         },
         {
@@ -36,7 +37,7 @@ export default class LastMayday {
             fontWeight: 'bold',
           }, common],
         },
-       
+
         _image(1.5, 3, '100rpx'),
       ],
     });
@@ -57,58 +58,52 @@ const common = {
 
 
 function _image(index, rotate, borderRadius) {
-  return (
-    {
-      type: 'image',
-      url: '../../palette/QRpic.jpg',
-      css: {
-        top: `${startTop + 14 * gapSize}rpx`,
-        left: `${startLeft + 175 * index}rpx`,
-        width: '100rpx',
-        height: '100rpx',
-        // shadow: '10rpx 10rpx 5rpx #888888',
-        borderRadius: borderRadius,
-      },
-    }
-  );
+  return ({
+    type: 'image',
+    url: '../../palette/QRpic.png',
+    css: {
+      top: `${startTop + 15 * gapSize}rpx`,
+      left: `${startLeft + 180 * index}rpx`,
+      width: '100rpx',
+      height: '100rpx',
+      // shadow: '10rpx 10rpx 5rpx #888888',
+      borderRadius: borderRadius,
+    },
+  });
 }
 
 function _csuImg(index, rotate, borderRadius) {
-  return (
-    {
-      type: 'image',
-      url: '../../palette/csu.png',
-      css: {
-        top: `${startTop + 15 * gapSize}rpx`,
-        left: `${startLeft + 0.1 * index}rpx`,
-        width: '130rpx',
-        height: '130rpx',
-        // shadow: '10rpx 10rpx 5rpx #888888',
-        rotate: rotate,
-        borderWidth: '2rpx',
-        borderColor: '#fff',
-        borderRadius: borderRadius,
-      },
-    }
-  );
+  return ({
+    type: 'image',
+    url: '../../palette/csu.png',
+    css: {
+      top: `${startTop + 5 * gapSize}rpx`,
+      left: `${startLeft + 180 * index}rpx`,
+      width: '130rpx',
+      height: '130rpx',
+      // shadow: '10rpx 10rpx 5rpx #888888',
+      rotate: rotate,
+      borderWidth: '2rpx',
+      borderColor: '#fff',
+      borderRadius: borderRadius,
+    },
+  });
 }
 
 function _userImg(index, rotate, borderRadius, url) {
-  return (
-    {
-      type: 'image',
-      url: url,
-      css: {
-        top: `${startTop + 2.5 * gapSize}rpx`,
-        left: `${startLeft + 14 * index}rpx`,
-        width: '130rpx',
-        height: '130rpx',
-        shadow: '10rpx 10rpx 5rpx #888888',
-        rotate: rotate,
-        borderRadius: borderRadius,
-      },
-    }
-  );
+  return ({
+    type: 'image',
+    url: url,
+    css: {
+      top: `${startTop + 2.5 * gapSize}rpx`,
+      left: `${startLeft + 14 * index}rpx`,
+      width: '130rpx',
+      height: '130rpx',
+      shadow: '10rpx 10rpx 5rpx #888888',
+      rotate: rotate,
+      borderRadius: borderRadius,
+    },
+  });
 }
 
 function _des(index, content) {
