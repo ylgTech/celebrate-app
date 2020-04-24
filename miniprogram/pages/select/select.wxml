@@ -5,6 +5,7 @@
 <!--选择头像框页-->
 <!--先弄个大容器-->
 <view class="tou-list-container">
+  <image class='background' src="https://images.unsplash.com/photo-1566805133518-0d6624750127?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" mode="aspectFill"></image>
   <!--小容器装一下各个头像框并细调布局-->
   <view class="big-photo-list">
     <!--wxfor渲染-->

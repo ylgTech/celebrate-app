@@ -1,16 +1,16 @@
 // pages/select/select.js
 const app = getApp();
 var _tousList = [{
-  name: '类型1',
+  name: '知行合一',
   coverImgUrl: '../../images/ah1.png'
 }, {
-  name: '类型2',
+  name: '经世致用',
   coverImgUrl: '../../images/ah2.png'
 }, {
-  name: '类型3',
+  name: '向善求真',
   coverImgUrl: '../../images/ah3.png'
 }, {
-  name: '类型4',
+  name: '唯美有容',
   coverImgUrl: '../../images/ah4.png'
 }]
 

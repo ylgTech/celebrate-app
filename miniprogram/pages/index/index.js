@@ -139,7 +139,7 @@ onShareAppMessage:function(res){
   loadMusic: function () {
     backgroundAudioManager.title = '红色蒲公英'
     backgroundAudioManager.singer = '影视原声'
-    backgroundAudioManager.coverImgUrl = 'https://7265-release-rr1dn-1301509296.tcb.qcloud.la/minzhu.jpg?sign=f942d736de05279e603c33d2869bdc3c&t=1583934978'
+    backgroundAudioManager.coverImgUrl = 'http://photo.rednet.cn/attachment/201206/18/3835618_13400554851fkF.jpg'
     backgroundAudioManager.src = 'http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_662348&response=res&type=convert_url&'
   },
 
