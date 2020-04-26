@@ -56,3 +56,6 @@
     -webkit-transform: rotate(360deg);
   }
 }
+.cu-btn.lg{
+  font-weight: bold;
+}

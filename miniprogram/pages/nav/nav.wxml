@@ -3,5 +3,5 @@
   <image class="img" src="../../palette/sharebk.jpg"></image>
   <image class="logo" mode="aspectFit" src="../../palette/logo.png"></image>
   <!-- <image class="music-btn {{isPlay ? 'running' : ''}}" src="../index/music.png" bindtap="hitMusicBtn"></image> -->
-  <button bindtap="nav" class="btn cu-btn line-orange round lg shadow">点亮校徽</button>
+  <button bindtap="nav" class="btn cu-btn line-orange round lg shadow">点亮校徽 献礼校庆</button>
 </view>
