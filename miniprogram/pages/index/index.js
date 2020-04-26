@@ -123,7 +123,7 @@ onShareAppMessage:function(res){
   var that = this;
   return {
     title:'来为中南大学组建20周年助力吧！',
-    path:'/pages/nav/nav?id='+123,
+    path:'/miniprogram/pages/nav/nav?id='+123,
     imageUrl: 'https://7265-release-rr1dn-1301509296.tcb.qcloud.la/minzhu.jpg?sign=f942d736de05279e603c33d2869bdc3c&t=1583934978',
     success:function(res){
 

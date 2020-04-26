@@ -8,7 +8,7 @@ export default class LastMayday {
       views: [{
           id: 'my-text-id',
           type: 'text',
-          text: "             我是" + userinfo.nickName + ",我在" + province + ",",
+          text: "             我是" + userinfo.nickName + "，我在" + province + "，",
           css: [{
             top: `${startTop + 38 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
@@ -18,7 +18,7 @@ export default class LastMayday {
         {
           id: 'my-text-id',
           type: 'text',
-          text: "         点亮中南校徽，为中南庆生。",
+          text: "         点亮中南校徽，为中南庆生！",
           css: [{
             top: `${startTop + 40 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
