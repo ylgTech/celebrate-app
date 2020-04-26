@@ -9,6 +9,10 @@
 
 .map {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* 右上角转动音乐图标 */
@@ -40,7 +44,10 @@
 .btn {
   position: fixed;
   bottom: 7%;
-  left: 30%;
+  left: 35%;
+  width: 30%;
+  height: 30%;
+  /* left: 30%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,5 +100,9 @@
   color: black
 }
 .cu-bar .content{
-  margin-left: 80rpx;
+  margin-left: 40rpx;
+}
+
+.inner-text {
+  margin-right: 8rpx;
 }

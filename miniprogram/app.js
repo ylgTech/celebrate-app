@@ -37,8 +37,8 @@ App({
               _this.avatarUrl = res.userInfo.avatarUrl
 
             },
-            fail: function() {
-
+            fail: function(res) {
+              console.log(res)
               console.log('fail')
             },
 

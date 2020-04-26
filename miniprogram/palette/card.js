@@ -1,5 +1,5 @@
 export default class LastMayday {
-  palette(userinfo, province) {
+  palette(userinfo, province, count) {
 
     return ({
       width: '670rpx',
@@ -37,8 +37,8 @@ export default class LastMayday {
             fontWeight: 'bold',
           }, common],
         },
-
-        _image(1.5, 3, '100rpx'),
+        _userImg(3, 0, '100rpx', userinfo.avatarUrl),
+        _qrcode(1.5, 3, '100rpx'),
       ],
     });
   }
@@ -46,7 +46,7 @@ export default class LastMayday {
 
 const startTop = 100;
 const startLeft = 20;
-const gapSize = 50;
+const gapSize = 20;
 const common = {
   left: `${startLeft}rpx`,
   fontSize: '35rpx',
@@ -57,34 +57,16 @@ const common = {
 };
 
 
-function _image(index, rotate, borderRadius) {
+function _qrcode(index, rotate, borderRadius) {
   return ({
     type: 'image',
     url: '../../palette/QRpic.png',
     css: {
-      top: `${startTop + 15 * gapSize}rpx`,
-      left: `${startLeft + 180 * index}rpx`,
-      width: '100rpx',
-      height: '100rpx',
+      top: `${startTop + 30 * gapSize}rpx`,
+      left: `${startLeft + 180 * index + 80}rpx`,
+      width: '120rpx',
+      height: '120rpx',
       // shadow: '10rpx 10rpx 5rpx #888888',
-      borderRadius: borderRadius,
-    },
-  });
-}
-
-function _csuImg(index, rotate, borderRadius) {
-  return ({
-    type: 'image',
-    url: '../../palette/csu.png',
-    css: {
-      top: `${startTop + 5 * gapSize}rpx`,
-      left: `${startLeft + 180 * index}rpx`,
-      width: '130rpx',
-      height: '130rpx',
-      // shadow: '10rpx 10rpx 5rpx #888888',
-      rotate: rotate,
-      borderWidth: '2rpx',
-      borderColor: '#fff',
       borderRadius: borderRadius,
     },
   });

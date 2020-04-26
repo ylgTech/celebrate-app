@@ -48,7 +48,7 @@ Page({
    */
   onReady: function () {
     this.setData({
-      template: new Card().palette(app.globalData.userInfo, app.globalData.province),
+      template: new Card().palette(app.globalData.userInfo, app.globalData.province, app.globalData.count),
     });   
   },
 });

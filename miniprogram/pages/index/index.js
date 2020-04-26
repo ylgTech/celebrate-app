@@ -123,7 +123,7 @@ onShareAppMessage:function(res){
   var that = this;
   return {
     title:'来为中南大学组建20周年助力吧！',
-    path:'/pages/index/index?id='+123,
+    path:'/pages/nav/nav?id='+123,
     imageUrl: 'https://7265-release-rr1dn-1301509296.tcb.qcloud.la/minzhu.jpg?sign=f942d736de05279e603c33d2869bdc3c&t=1583934978',
     success:function(res){
 
@@ -139,8 +139,10 @@ onShareAppMessage:function(res){
   loadMusic: function () {
     backgroundAudioManager.title = 'intro'
     backgroundAudioManager.singer = '王备'
-    backgroundAudioManager.coverImgUrl = '//p2.music.126.net/I0ME5FKTUqvXmn1k2-qKQA==/109951162865708042.jpg?param=90y90'
-    backgroundAudioManager.src = '//music.163.com/outchain/player?type=2&id=457492084&auto=1&height=66'
+    backgroundAudioManager.coverImgUrl = 'http://p1.music.126.net/I0ME5FKTUqvXmn1k2-qKQA==/109951162865708042.jpg?param=130y130'
+    backgroundAudioManager.src = 'http://music.163.com/song/media/outer/url?id=457492084.mp3'
+    backgroundAudioManager.startTime = 32
+    
   },
 
   /**
@@ -517,6 +519,7 @@ onShareAppMessage:function(res){
     // 查询当前用户所有的 counters
     db.collection('user').count({
       success: res => {
+        app.globalData.count = res.total
         wx.showToast({
           icon: 'none',
           duration: 3000,
@@ -563,6 +566,7 @@ onShareAppMessage:function(res){
   },
 
   getUserInfo: function (e) {
+    console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
     app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,

@@ -1,0 +1,57 @@
+/* miniprogram/pages/nav.wxss */
+.body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.logo {
+  width: 300px;
+  position: fixed;
+  top: 40rpx;
+  left: 40rpx;
+}
+
+.nav {
+  width: 100px;
+}
+
+.btn {
+  position: relative;
+  bottom: -60%;
+}
+
+
+/* 右上角转动音乐图标 */
+.music-btn {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 8%;
+  right: 10%;
+}
+
+.running{
+  /* 动画效果 */
+  animation: rotate 8s linear infinite;
+  -webkit-animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}

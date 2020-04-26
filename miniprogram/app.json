@@ -2,9 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/share/share",
-    "pages/madeph/madeph",
-    "pages/select/select",
-    "pages/upload/upload"
+    "pages/nav/nav"
   ],
   "window": {
     "navigationStyle": "custom"
