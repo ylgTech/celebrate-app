@@ -37,7 +37,7 @@ export default class LastMayday {
         },
         _userImg(8, 0, '100rpx', userinfo.avatarUrl),
         _qrcode(1.5, 3, '100rpx'),
-        _logo(1.5, 3, '100rpx'),
+        _logo(1.5, 3, '50rpx'),
       ],
     });
   }
@@ -78,8 +78,8 @@ function _logo(index, rotate, borderRadius) {
     css: {
       top: `${startTop - 3 * gapSize}rpx`,
       left: `${startLeft + 5 * index }rpx`,
-      width: '450rpx',
-      height: '120rpx',
+      width: '200rpx',
+      height: '50rpx',
       // shadow: '10rpx 10rpx 5rpx #888888',
     },
   });
