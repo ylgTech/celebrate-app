@@ -124,7 +124,7 @@ onShareAppMessage:function(res){
   return {
     title:'来为中南大学组建20周年助力吧！',
     path:'/miniprogram/pages/nav/nav?id='+123,
-    imageUrl: 'https://7778-wxpro-rabk6-1301888950.tcb.qcloud.la/mmexport1587911087070.jpg?sign=4d40a701b084e016b5bd7ea11740ec8b&t=1587911759',
+    imageUrl: 'https://7778-wxpro-rabk6-1301888950.tcb.qcloud.la/QQ%E5%9B%BE%E7%89%8720200426230309.jpg?sign=3af7e1e40c7c1d618f607472c81a4f64&t=1587913431',
     success:function(res){
 
     },
