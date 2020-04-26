@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
-	<view slot="backText">返回</view>
-	<view slot="content">为母校组建20周年助力</view>
+	<view slot="backText"> </view>
+	<view slot="content">庆祝中南大学合并组建20周年</view>
 </cu-custom>
 <view>
   <view class='shareimg'>

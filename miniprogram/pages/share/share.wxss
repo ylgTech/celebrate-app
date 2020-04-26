@@ -19,3 +19,6 @@
   font-size: 30rpx;
   border-radius: 10%;
 }
+.cu-bar .content{
+  margin-left: 130rpx;
+}

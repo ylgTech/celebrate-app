@@ -87,9 +87,9 @@ Page({
   onShareAppMessage: function () {
     var that = this;
     return {
-      title: '来为中南大学组建20周年助力吧！',
+      title: '热烈庆祝中南大学合并组建20周年！',
       path: '/miniprogram/pages/nav/nav?id=' + 123,
-      imageUrl: 'https://7265-release-rr1dn-1301509296.tcb.qcloud.la/minzhu.jpg?sign=f942d736de05279e603c33d2869bdc3c&t=1583934978',
+      imageUrl: 'https://7778-wxpro-rabk6-1301888950.tcb.qcloud.la/mmexport1587911087070.jpg?sign=4d40a701b084e016b5bd7ea11740ec8b&t=1587911759',
       success: function (res) {
 
       },
