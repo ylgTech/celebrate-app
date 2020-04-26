@@ -137,10 +137,10 @@ onShareAppMessage:function(res){
    * 加载背景音乐
    */
   loadMusic: function () {
-    backgroundAudioManager.title = '红色蒲公英'
-    backgroundAudioManager.singer = '影视原声'
-    backgroundAudioManager.coverImgUrl = 'http://photo.rednet.cn/attachment/201206/18/3835618_13400554851fkF.jpg'
-    backgroundAudioManager.src = 'http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_662348&response=res&type=convert_url&'
+    backgroundAudioManager.title = 'intro'
+    backgroundAudioManager.singer = '王备'
+    backgroundAudioManager.coverImgUrl = '//p2.music.126.net/I0ME5FKTUqvXmn1k2-qKQA==/109951162865708042.jpg?param=90y90'
+    backgroundAudioManager.src = '//music.163.com/outchain/player?type=2&id=457492084&auto=1&height=66'
   },
 
   /**
@@ -330,6 +330,7 @@ onShareAppMessage:function(res){
       if (province == provinces[j].proName) {
         db.collection('user').count({
           success: res => {
+            console.log('FUCKYOU'+res.total)
           wx.showToast({
             title: '您已经在该省份助过力了（//▽//）现在已有'+res.total+'个标志了哦',
             duration: 3000,
@@ -519,7 +520,7 @@ onShareAppMessage:function(res){
         wx.showToast({
           icon: 'none',
           duration: 3000,
-          title: '我为母校合并组建20周年助力。CSUer献给母校的第' + res.total +'个标志（●>∀<●）'
+          title: '我是第' + res.total +'个点亮校徽为母校庆生的中南人！'
         })
 
       },

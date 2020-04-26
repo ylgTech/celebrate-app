@@ -2,6 +2,7 @@ const cloud = require('wx-server-sdk')
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
 })
+
 const db = cloud.database()
 const MAX_LIMIT = 100
 exports.main = async (event, context) => {

@@ -92,3 +92,6 @@
 .cu-btn bg-red{
   color: black
 }
+.cu-bar .content{
+  margin-left: 80rpx;
+}
