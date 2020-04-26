@@ -8,21 +8,19 @@ export default class LastMayday {
       views: [{
           id: 'my-text-id',
           type: 'text',
-          text: "",
+          text: "         我是" + userinfo.nickName + ",我在" + province + ",",
           css: [{
-            top: `${startTop + 20 * gapSize}rpx`,
+            top: `${startTop + 38 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
-            fontWeight: 'normal',
-            color:'white',
-            fontFamily: "仿宋",
+            fontWeight: 'bold',
           }, common],
         },
         {
           id: 'my-text-id',
           type: 'text',
-          text: "",
+          text: "      点亮中南校徽，为中南庆生。",
           css: [{
-            top: `${startTop + 7.0 * gapSize}rpx`,
+            top: `${startTop + 40 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
             fontWeight: 'bold',
           }, common],
@@ -37,7 +35,7 @@ export default class LastMayday {
             fontWeight: 'bold',
           }, common],
         },
-        _userImg(3, 0, '100rpx', userinfo.avatarUrl),
+        _userImg(8, 0, '100rpx', userinfo.avatarUrl),
         _qrcode(1.5, 3, '100rpx'),
       ],
     });
@@ -51,7 +49,7 @@ const common = {
   left: `${startLeft}rpx`,
   fontSize: '35rpx',
   // color: "#698dff",
-  color: "#FFDEAD",
+  color: "red",
   // fontFamily: "STFangsong",
   // fontWeight: 'bold',
 };
@@ -77,8 +75,8 @@ function _userImg(index, rotate, borderRadius, url) {
     type: 'image',
     url: url,
     css: {
-      top: `${startTop + 2.5 * gapSize}rpx`,
-      left: `${startLeft + 14 * index}rpx`,
+      top: `${startTop + 30 * gapSize}rpx`,
+      left: `${startLeft + 20 * index}rpx`,
       width: '130rpx',
       height: '130rpx',
       shadow: '10rpx 10rpx 5rpx #888888',
