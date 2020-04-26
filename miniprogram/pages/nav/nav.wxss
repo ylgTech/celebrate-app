@@ -14,9 +14,10 @@
 }
 
 .logo {
-  width: 300px;
+  width: 100px;
+  height: 100px;
   position: fixed;
-  top: 40rpx;
+  /* top: 40rpx; */
   left: 40rpx;
 }
 
