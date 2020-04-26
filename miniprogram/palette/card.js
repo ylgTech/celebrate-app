@@ -37,6 +37,7 @@ export default class LastMayday {
         },
         _userImg(8, 0, '100rpx', userinfo.avatarUrl),
         _qrcode(1.5, 3, '100rpx'),
+        _logo(1.5, 3, '100rpx'),
       ],
     });
   }
@@ -66,6 +67,20 @@ function _qrcode(index, rotate, borderRadius) {
       height: '120rpx',
       // shadow: '10rpx 10rpx 5rpx #888888',
       borderRadius: borderRadius,
+    },
+  });
+}
+
+function _logo(index, rotate, borderRadius) {
+  return ({
+    type: 'image',
+    url: '../../palette/logo.png',
+    css: {
+      top: `${startTop - 3 * gapSize}rpx`,
+      left: `${startLeft + 5 * index }rpx`,
+      width: '450rpx',
+      height: '120rpx',
+      // shadow: '10rpx 10rpx 5rpx #888888',
     },
   });
 }
