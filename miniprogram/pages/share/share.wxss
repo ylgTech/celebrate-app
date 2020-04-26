@@ -20,5 +20,5 @@
   border-radius: 10%;
 }
 .cu-bar .content{
-  margin-left: 130rpx;
+  margin-left: 100rpx;
 }

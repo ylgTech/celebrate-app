@@ -9,7 +9,7 @@
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
       <button wx:if="{{hasUserInfo && canIUse}}" bindtap="getLocation" disabled="{{disabled}}">
         <cover-view class='inner'>
-          <cover-view class='inner-text'>点亮校徽</cover-view>
+          <cover-view class='inner-text'>点亮校徽为中南庆生</cover-view>
           <cover-image src='buttonflag.png'></cover-image>
         </cover-view>
       </button>

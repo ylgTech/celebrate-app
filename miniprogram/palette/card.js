@@ -8,7 +8,7 @@ export default class LastMayday {
       views: [{
           id: 'my-text-id',
           type: 'text',
-        text: "                    我是" + userinfo.nickName + "，我在" + province + "，",
+        text: "                          我是" + userinfo.nickName + "，我在" + province + "，",
           css: [{
             top: `${startTop + 38 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
@@ -18,7 +18,7 @@ export default class LastMayday {
         {
           id: 'my-text-id',
           type: 'text',
-          text: "                点亮中南校徽，为中南庆生！",
+          text: "                      点亮中南校徽，为中南庆生！",
           css: [{
             top: `${startTop + 40 * gapSize}rpx`,
             // shadow: '10rpx 10rpx 5rpx #888888',
@@ -52,7 +52,7 @@ const common = {
   // color: "#698dff",
   color: "#9A2429",
   fontFamily: "STXihei",
-  fontWeight: 'normal',
+  fontWeight: 'bold',
 };
 
 
@@ -92,8 +92,8 @@ function _userImg(index, rotate, borderRadius, url) {
     css: {
       top: `${startTop + 30 * gapSize}rpx`,
       left: `${startLeft + 20 * index}rpx`,
-      width: '130rpx',
-      height: '130rpx',
+      width: '120rpx',
+      height: '120rpx',
       shadow: '10rpx 10rpx 5rpx #888888',
       rotate: rotate,
       borderRadius: borderRadius,
