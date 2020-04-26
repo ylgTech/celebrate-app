@@ -21,24 +21,23 @@ App({
         traceUser: true,
       })
     }
-
     var _this = this;
 
     //获取用户登录信息(是否签到)
     wx.login({
-      success: function(res) {
+      success: function (res) {
         if (res.code) {
           //发起网络请求,由于是异步执行，需要加回调函数
           console.log(res.code)
           wx.getUserInfo({
-            success: function(res) {
+            success: function (res) {
               console.log(res.data);
               _this.userInfo = res.userInfo
               _this.avatarUrl = res.userInfo.avatarUrl
 
             },
-            fail: function(res) {
-              console.log(res)
+            fail: function () {
+
               console.log('fail')
             },
 

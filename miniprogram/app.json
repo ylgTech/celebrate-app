@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/nav/nav",
     "pages/index/index",
-    "pages/share/share",
-    "pages/nav/nav"
+    "pages/share/share"
   ],
   "window": {
     "navigationStyle": "custom"

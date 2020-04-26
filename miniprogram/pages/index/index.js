@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp();
-const backgroundAudioManager = wx.getBackgroundAudioManager()
+// const backgroundAudioManager = wx.getBackgroundAudioManager()
 
 // 中国地图的最东西南北端经纬度信息
 var chinaRegion = [{
@@ -93,28 +93,28 @@ Page({
 
     this.getAvatarUrl()
     this.onGetOpenid()
-    this.loadMusic()
+    // this.loadMusic()
     var that = this
-    backgroundAudioManager.onPlay(() => {
-      that.setData({
-        isPlay: true
-      })
-    })
-    backgroundAudioManager.onPause(() => {
-      that.setData({
-        isPlay: false
-      })
-    })
-    backgroundAudioManager.onEnded(() => {
-      that.setData({
-        isPlay: false
-      })
-    })
-    backgroundAudioManager.onStop(() => {
-      that.setData({
-        isPlay: false
-      })
-    })
+    // backgroundAudioManager.onPlay(() => {
+    //   that.setData({
+    //     isPlay: true
+    //   })
+    // })
+    // backgroundAudioManager.onPause(() => {
+    //   that.setData({
+    //     isPlay: false
+    //   })
+    // })
+    // backgroundAudioManager.onEnded(() => {
+    //   that.setData({
+    //     isPlay: false
+    //   })
+    // })
+    // backgroundAudioManager.onStop(() => {
+    //   that.setData({
+    //     isPlay: false
+    //   })
+    // })
   },
   /**
    * 右上角分享功能实现
@@ -136,14 +136,14 @@ onShareAppMessage:function(res){
   /**
    * 加载背景音乐
    */
-  loadMusic: function () {
-    backgroundAudioManager.title = 'intro'
-    backgroundAudioManager.singer = '王备'
-    backgroundAudioManager.coverImgUrl = 'http://p1.music.126.net/I0ME5FKTUqvXmn1k2-qKQA==/109951162865708042.jpg?param=130y130'
-    backgroundAudioManager.src = 'http://music.163.com/song/media/outer/url?id=457492084.mp3'
-    backgroundAudioManager.startTime = 32
+  // loadMusic: function () {
+  //   backgroundAudioManager.title = 'intro'
+  //   backgroundAudioManager.singer = '王备'
+  //   backgroundAudioManager.coverImgUrl = 'http://p1.music.126.net/I0ME5FKTUqvXmn1k2-qKQA==/109951162865708042.jpg?param=130y130'
+  //   backgroundAudioManager.src = 'http://music.163.com/song/media/outer/url?id=457492084.mp3'
+  //   backgroundAudioManager.startTime = 32
     
-  },
+  // },
 
   /**
    * 获取头像url
@@ -566,7 +566,6 @@ onShareAppMessage:function(res){
   },
 
   getUserInfo: function (e) {
-    console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
     app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,
@@ -578,20 +577,20 @@ onShareAppMessage:function(res){
   /**
    * 点击音乐按钮
    */
-  hitMusicBtn: function () {
-    if (this.data.isPlay) {
-      backgroundAudioManager.pause()
-    } else {
-      backgroundAudioManager.play()
-    }
-    this.setData({
-      isPlay: !this.data.isPlay
-    })
-  },
+  // hitMusicBtn: function () {
+  //   if (this.data.isPlay) {
+  //     backgroundAudioManager.pause()
+  //   } else {
+  //     backgroundAudioManager.play()
+  //   }
+  //   this.setData({
+  //     isPlay: !this.data.isPlay
+  //   })
+  // },
   headimag(){
     wx.navigateTo({
       url: '../select/select',
     })
-  }
+  },
 
 })
