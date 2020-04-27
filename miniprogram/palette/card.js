@@ -37,7 +37,6 @@ export default class LastMayday {
         },
         _userImg(8, 0, '100rpx', userinfo.avatarUrl),
         _qrcode(1.5, 3, '0rpx'),
-        _logo(1.5, 3, '50rpx'),
       ],
     });
   }

@@ -44,8 +44,8 @@
 .btn {
   position: fixed;
   bottom: 7%;
-  left: 28%;
-  width: 45%;
+  left: 26%;
+  width: 50%;
   height: 30%;
   /* left: 30%; */
   display: flex;
